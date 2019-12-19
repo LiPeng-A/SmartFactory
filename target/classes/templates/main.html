@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--头部-->
+    <div id="sidebar" class="sidebar py-3" th:fragment="main">
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
+        <ul class="sidebar-menu list-unstyled">
+            <li class="sidebar-list-item"><a href="/index " class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>主页</span></a></li>
+            <li class="sidebar-list-item"><a href="/gather" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>采集数据</span></a></li>
+            <li class="sidebar-list-item"><a href="/data_analyze" class="sidebar-link text-muted"><i class="o-sales-up-1 mr-3 text-gray"></i><span>数据分析</span></a></li>
+            <li class="sidebar-list-item"><a href="/history_data" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>历史数据</span></a></li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>设备管理</span></a>
+                <div id="pages" class="collapse">
+                    <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                        <li class="sidebar-list-item"><a href="/equ" class="sidebar-link text-muted pl-lg-5">设备控制</a></li>
+                        <li class="sidebar-list-item"><a href="/threshold" class="sidebar-link text-muted pl-lg-5">阈值设置</a></li>
+                        <li class="sidebar-list-item"><a href="/contextual_model" class="sidebar-link text-muted pl-lg-5">情景模式</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#system" aria-expanded="false" aria-controls="system" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>系统管理</span></a>
+                <div id="system" class="collapse">
+                    <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                        <li class="sidebar-list-item"><a href="/user_list" class="sidebar-link text-muted pl-lg-5">用户管理</a></li>
+                        <li class="sidebar-list-item"><a href="/role_list" class="sidebar-link text-muted pl-lg-5">角色管理</a></li>
+                        <li class="sidebar-list-item"><a href="/permission_list" class="sidebar-link text-muted pl-lg-5">资源权限管理</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">EXTRAS</div>
+    </div>
+</body>
+</html>

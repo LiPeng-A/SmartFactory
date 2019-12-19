@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.mapper.RoleMapper">
+
+    <!--给用户授予角色-->
+    <insert id="insertUserRole">
+        INSERT INTO tb_role_user VALUES (#{role_id},#{user_id})
+    </insert>
+    <!--删除用户与角色的信息-->
+    <delete id="deleteUserRole">
+        DELETE FROM tb_role_user WHERE user_id=#{user_id}
+    </delete>
+    <!--根据id查询用户的角色-->
+    <select id="findRoleByUserId" parameterType="Long" resultType="role">
+        select * from tb_role WHERE  id =(select role_id from tb_role_user where user_id=#{id})
+    </select>
+
+
+    <resultMap id="roleShowRes" type="role">
+        <!--往role中注入数据-->
+        <id property="id" column="id"></id>
+        <result property="role_name" column="role_name"></result>
+        <result property="role_desc" column="role_desc"></result>
+        <!--往permission中注入数据-->
+        <collection property="permissions" ofType="permission">
+            <result property="id" column="pid"></result>
+            <result property="name" column="name"></result>
+            <result property="url" column="url"></result>
+        </collection>
+    </resultMap>
+
+    <!--查询角色的详细信息-->
+    <select id="findRoleByRoleId" parameterType="Long" resultMap="roleShowRes">
+        select
+          r.id id,r.role_name,r.role_desc,p.id pid,p.name,p.url
+        from
+        tb_role r,tb_permission_role rp,tb_permission p
+        where
+        r.id=rp.role_id
+        AND
+        p.id=rp.permission_id
+        AND
+        r.id=#{id}
+    </select>
+
+    <!--根据角色id查询该角色可添加的角色id-->
+    <select id="findPermissionByRoleId" resultType="permission" parameterType="Long">
+        select * from tb_permission where id not IN
+        (select permission_id from tb_permission_role where role_id=#{id})
+    </select>
+
+    <!--为当前角色设置权限-->
+    <insert id="settingPermission">
+        INSERT INTO tb_permission_role VALUES (#{per_id},#{role_id})
+    </insert>
+
+    <!--删除当前角色的权限-->
+    <delete id="deletePermission">
+        delete From tb_permission_role WHERE  permission_id=#{per_id} AND  role_id=#{role_id}
+    </delete>
+
+    <!--删除角色与用户的中间表-->
+    <delete id="deleteRoleAndUser">
+        DELETE FROM tb_role_user where #{role_id} = role_id
+    </delete>
+</mapper>

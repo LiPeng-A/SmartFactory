@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户管理</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
+    <!-- orion icons-->
+    <link rel="stylesheet" th:href="@{/css/orionicons.css}">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" th:href="@{/css/style.default.css}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" th:href="@{/img/favicon.png}">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body>
+<div id="user">
+    <!--顶部条-->
+    <header th:replace="top :: top">
+    </header>
+
+    <!--主体部分-->
+    <div class="d-flex align-items-stretch">
+        <!--导航-->
+        <div th:replace="main :: main"></div>
+
+        <!--主体-->
+        <div class="page-holder w-100 d-flex flex-wrap">
+            <div class="container-fluid px-xl-5">
+                <center>
+                    <div class="card" style="width: 90%">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-pane" id="tab-treetable">
+                                <table id="collapse-table"
+                                       class="table table-bordered table-hover dataTable" style="text-align: center">
+                                    <thead>
+                                    <tr>
+                                        <th>用户名称</th>
+                                        <th>信息类型</th>
+                                        <th>角色</th>
+                                        <th>描述</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td rowspan="5" th:text="${info.username}" style="font-size: 20px;"></td>
+                                    </tr>
+                                    <tr th:if="${info.role}!=null">
+                                        <td><span style="font-family: 黑体;color: #9fcdff;font-size: 20px">角色</span></td>
+                                        <td th:text="${info.role.role_name}"></td>
+                                        <td th:text="${info.role.role_desc}"></td>
+                                    </tr>
+                                    <tr th:if="${info.role}==null">
+                                        <td><span style="font-family: 黑体;color: #9fcdff;font-size: 20px">角色</span></td>
+                                        <td th:text="无"></td>
+                                        <td th:text="无"></td>
+                                    </tr>
+                                    <span th:if="${info.role}!=null">
+                                    <tr th:each="p: ${info.role.permissions}">
+                                        <td><span style="font-family: 黑体;color: #9fcdff;font-size: 20px">权限</span></td>
+                                        <td th:text="${p.name}"></td>
+                                        <td th:text="${p.url}"></td>
+                                    </tr>
+                                        </span>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <!--尾部-->
+            <footer th:replace="footer :: footer"/>
+        </div>
+    </div>
+</div>
+<!-- JavaScript files-->
+<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/vendor/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/vendor/jquery.cookie/jquery.cookie.js}"></script>
+<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+<script th:src="@{/js/js.cookie.min.js}"></script>
+<script th:src="@{/js/front.js}"></script>
+<script th:src="@{/js/vue.js}"></script>
+<script th:src="@{/js/axios.min.js}"></script>
+<script th:src="@{/js/common.js}"></script>
+
+<script th:inline="javascript">
+
+    var vm = new Vue({
+        el: "#user",
+        data: {
+            user: {}
+        },
+        created() {
+        },
+        methods: {},
+
+    });
+
+</script>
+</body>
+</html>

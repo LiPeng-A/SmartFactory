@@ -1,0 +1,52 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://180.76.244.226/smart_factory?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: lipeng
+    password: 123456
+  application:
+    name: smart-web
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  thymeleaf:
+    cache: false #关闭thymeleaf缓存
+    check-template-location: true
+    enabled: true
+    mode: LEGACYHTML5
+    suffix: .html
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #日志
+  mapper-locations:  classpath:com/smart/mapper/*Mapper.xml  #配置扫描包
+  type-aliases-package: com/smart/pojo #配置别名
+
+
+fa:
+  i2c:
+    addr: 0x10
+    relay_1: 0x01
+    relay_2: 0x02
+    relay_3: 0x03
+    relay_4: 0x04
+    relay_on: 0xFF
+    relay_off: 0x00
+docker:
+  sensor:
+    addr: 0x17 #板子地址
+    temp_reg: 0x01 #分机温度
+    light_reg_l: 0x02 #光强监测 低8位
+    light_reg_h: 0x03 #光强监测 高8位
+    status_reg: 0x04 #状态功能
+    board_temp: 0x05 #板载温度
+    board_humidity: 0x06 #板载湿度
+    board_sensor_error: 0x07 #板子传感器是否正确
+    bmp280_temp_reg: 0x08 #温度
+    bmp280_pressure_reg_l: 0x09 #压力 低8位
+    bmp280_pressure_reg_m: 0x0A #压力 中8位
+    bmp280_pressure_reg_h: 0x0B #压力  高8位
+    bmp280_status: 0x0C  #
+    human_detect: 0x0D #活体监测
