@@ -7,6 +7,7 @@ F:\Test_Maven\factory\src\main\java\com\smart\pojo\Equipment.java
 F:\Test_Maven\factory\src\main\java\com\smart\utils\GpioUtils.java
 F:\Test_Maven\factory\src\main\java\com\smart\config\I2cSensorProperties.java
 F:\Test_Maven\factory\src\main\java\com\smart\service\impl\PermissionServiceImpl.java
+F:\Test_Maven\factory\src\main\java\com\smart\config\MyAccessDeniedHandler.java
 F:\Test_Maven\factory\src\main\java\com\smart\service\impl\SensorServiceImpl.java
 F:\Test_Maven\factory\src\main\java\com\smart\web\ThresholdController.java
 F:\Test_Maven\factory\src\main\java\com\smart\view\PageResult.java
