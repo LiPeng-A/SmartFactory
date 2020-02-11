@@ -149,7 +149,6 @@ public class Dht11Controller {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
 

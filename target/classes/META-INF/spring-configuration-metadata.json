@@ -1,0 +1,143 @@
+{
+  "groups": [
+    {
+      "name": "docker.sensor",
+      "type": "com.smart.config.I2cSensorProperties",
+      "sourceType": "com.smart.config.I2cSensorProperties"
+    },
+    {
+      "name": "fa.i2c",
+      "type": "com.smart.config.I2cRelayProperties",
+      "sourceType": "com.smart.config.I2cRelayProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "docker.sensor.addr",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.bmp280-pressure-reg-h",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.bmp280-pressure-reg-l",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.bmp280-pressure-reg-m",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.bmp280-status",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.bmp280-temp-reg",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.board-humidity",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.board-sensor-error",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.board-temp",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.human-detect",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.light-reg-h",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.light-reg-l",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.status-reg",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "docker.sensor.temp-reg",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cSensorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "fa.i2c.addr",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cRelayProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "fa.i2c.relay-1",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cRelayProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "fa.i2c.relay-2",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cRelayProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "fa.i2c.relay-3",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cRelayProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "fa.i2c.relay-4",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cRelayProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "fa.i2c.relay-off",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cRelayProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "fa.i2c.relay-on",
+      "type": "java.lang.Integer",
+      "sourceType": "com.smart.config.I2cRelayProperties",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}
